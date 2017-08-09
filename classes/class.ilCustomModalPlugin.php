@@ -22,21 +22,21 @@ class ilCustomModalPlugin extends ilAppointmentCustomModalPlugin
 	/** example using the complete appointmentpresentationgui object as a param*/
 	public function replaceContent()
 	{
-		$presentation = $this->getGUIObject();
+		//$presentation = $this->getGUIObject();
 
-		$appointment = $presentation->getAppointment();
+		$appointment = $this->getAppointment();
 
 		if($appointment['event']->isFullDay())
 		{
 			return "<div style='background-color: lightblue; border:3px solid red;padding:10px;'>
- 					<p>---- [PLUGIN] extra content:<br> This event is FULL DAY!</p>
+ 					<p>[PLUGIN] extra content: This event is FULL DAY!</p>
  					<img src='http://lorempixel.com/300/200/technics' alt=''>
  				</div>";
 		}
 		else
 		{
 			return "<div style='background-color: lightblue; border:1px solid blue;padding:10px;'>
- 					<p>[PLUGIN] extra content: <br> This event is not full day.</p>
+ 					<p>[PLUGIN] extra content: This event is not full day.</p>
  					<img src='http://lorempixel.com/300/200/technics' alt=''>
  				</div>";
 		}
