@@ -20,7 +20,7 @@ This plugin does not support any language. All text is hardcoded in the php file
 2. This plugin can be activated as usual.
 
 
-### Spected Result
+### Expected Result
 
 This plugin add/change content in the default appointment presentation (modals).
 Modifications are visible in the Personal Desktop calendar and in the marginal calendar located in courses and groups.
