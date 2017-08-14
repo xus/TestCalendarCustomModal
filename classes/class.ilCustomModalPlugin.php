@@ -2,6 +2,9 @@
 include_once("./Services/Calendar/classes/class.ilAppointmentCustomModalPlugin.php");
 
 /***
+ *
+ * Plugin example for the calendar revision.
+ * https://www.ilias.de/docu/goto.php?target=wiki_1357_Plugin_Slot_for_Detailed_Appointement_View
  * @author Jesús López Reyes <lopez@leifos.com>
  * @version $Id$
  *
@@ -19,14 +22,18 @@ class ilCustomModalPlugin extends ilAppointmentCustomModalPlugin
 		return "CustomModal";
 	}
 
-	/** example using the complete appointmentpresentationgui object as a param*/
+	/**
+	 * replace the complete modal content or empty
+	 * @return string
+	 */
 	public function replaceContent()
 	{
-		//$presentation = $this->getGUIObject();
+		//deactivated
+		return;
 
 		$appointment = $this->getAppointment();
 
-		if($appointment['event']->isFullDay())
+		if($appointment->isFullDay())
 		{
 			return "<div style='background-color: lightblue; border:3px solid red;padding:10px;'>
  					<p>[PLUGIN] extra content: This event is FULL DAY!</p>
@@ -37,31 +44,30 @@ class ilCustomModalPlugin extends ilAppointmentCustomModalPlugin
 		{
 			return "<div style='background-color: lightblue; border:1px solid blue;padding:10px;'>
  					<p>[PLUGIN] extra content: This event is not full day.</p>
- 					<img src='http://lorempixel.com/300/200/technics' alt=''>
+ 					<img src='http://lorempixel.com/300/200/business' alt=''>
  				</div>";
 		}
 	}
 
 	/**
-	 * example using the appointment array as a param
+	 * Add extra content in the grid.
 	 * @return string html content
 	 */
 	public function addExtraContent()
 	{
-		//$presentation = $this->getGUIObject();
-
 		$appointment = $this->getAppointment();
 
-		$cat_id = ilCalendarCategoryAssignments::_lookupCategory($appointment['event']->getEntryId());
+		//example dealing with calendar types.
+		$cat_id = ilCalendarCategoryAssignments::_lookupCategory($appointment->getEntryId());
 		$cat = ilCalendarCategory::getInstanceByCategoryId($cat_id);
 
-		if($cat->getType() == ilCalendarCategory::TYPE_OBJ)
-		{
+		if(ilObject::_lookupType($cat->getObjId()) == "sess") {
+			$bgcolor = "orange";
+			$str = "This modal contains Session Information";
+		}  else if($cat->getType() == ilCalendarCategory::TYPE_OBJ) {
 			$bgcolor = "#DAF0DF";
 			$str = "This modal contains Object info";
-		}
-		else
-		{
+		} else {
 			$bgcolor = "#B5E4EE";
 			$str = "This modal doesn't contain Object info";
 		}
@@ -78,6 +84,8 @@ class ilCustomModalPlugin extends ilAppointmentCustomModalPlugin
 	 */
 	public function infoscreenAddContent(ilInfoScreenGUI $a_info)
 	{
+		return $a_info;
+
 		$a_info->addProperty("[PLUGIN] extra info", "[PLUGIN]This is the value of the property created by the plugin.");
 
 		return $a_info;
@@ -90,15 +98,18 @@ class ilCustomModalPlugin extends ilAppointmentCustomModalPlugin
 	 */
 	public function toolbarAddItems(ilToolbarGUI $a_toolbar)
 	{
-		$a_toolbar->addText("* [PLUGIN] added toolbar item  * ");
+		return $a_toolbar;
+		$a_toolbar->addText("[PLUGIN] txt added");
 		return $a_toolbar;
 	}
 
 	/**
-	 * @return ilToolbarGUI
+	 * @return ilToolbarGUI or empty
 	 */
 	public function toolbarReplaceContent()
 	{
+		return;
+
 		$toolbar = new ilToolbarGUI();
 		$toolbar->addText("[PLUGIN] Toolbar replaced");
 		return $toolbar;
