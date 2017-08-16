@@ -84,8 +84,6 @@ class ilCustomModalPlugin extends ilAppointmentCustomModalPlugin
 	 */
 	public function infoscreenAddContent(ilInfoScreenGUI $a_info)
 	{
-		return $a_info;
-
 		$a_info->addProperty("[PLUGIN] extra info", "[PLUGIN]This is the value of the property created by the plugin.");
 
 		return $a_info;
@@ -98,7 +96,6 @@ class ilCustomModalPlugin extends ilAppointmentCustomModalPlugin
 	 */
 	public function toolbarAddItems(ilToolbarGUI $a_toolbar)
 	{
-		return $a_toolbar;
 		$a_toolbar->addText("[PLUGIN] txt added");
 		return $a_toolbar;
 	}
@@ -108,8 +105,6 @@ class ilCustomModalPlugin extends ilAppointmentCustomModalPlugin
 	 */
 	public function toolbarReplaceContent()
 	{
-		return;
-
 		$toolbar = new ilToolbarGUI();
 		$toolbar->addText("[PLUGIN] Toolbar replaced");
 		return $toolbar;
