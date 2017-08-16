@@ -109,4 +109,12 @@ class ilCustomModalPlugin extends ilAppointmentCustomModalPlugin
 		$toolbar->addText("[PLUGIN] Toolbar replaced");
 		return $toolbar;
 	}
+
+	/**
+	 * @return string
+	 */
+	public function editModalTitle()
+	{
+		return "[PLUGIN] Modal Plugin changed this title";
+	}
 }
