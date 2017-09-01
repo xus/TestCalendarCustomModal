@@ -111,10 +111,11 @@ class ilCustomModalPlugin extends ilAppointmentCustomModalPlugin
 	}
 
 	/**
+	 * @param string $a_current_title
 	 * @return string
 	 */
-	public function editModalTitle()
+	public function editModalTitle($a_current_title)
 	{
-		return "[PLUGIN] Modal Plugin changed this title";
+		return "[PLUGIN]reverses the title: ".strrev($a_current_title);
 	}
 }
