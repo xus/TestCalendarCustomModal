@@ -4,6 +4,7 @@ include_once("./Services/Calendar/classes/class.ilAppointmentCustomModalPlugin.p
 /***
  *
  * Plugin example for the calendar revision.
+ * Plugin slot: AppointmentCustomModal
  * https://www.ilias.de/docu/goto.php?target=wiki_1357_Plugin_Slot_for_Detailed_Appointement_View
  * @author Jesús López Reyes <lopez@leifos.com>
  * @version $Id$
@@ -29,7 +30,7 @@ class ilCustomModalPlugin extends ilAppointmentCustomModalPlugin
 	public function replaceContent()
 	{
 		//deactivated
-		return;
+		//return "";
 
 		$appointment = $this->getAppointment();
 
@@ -89,7 +90,6 @@ class ilCustomModalPlugin extends ilAppointmentCustomModalPlugin
 		return $a_info;
 	}
 
-
 	/**
 	 * @param ilToolbarGUI $a_toolbar
 	 * @return ilToolbarGUI
@@ -111,11 +111,11 @@ class ilCustomModalPlugin extends ilAppointmentCustomModalPlugin
 	}
 
 	/**
-	 * @param string $a_current_title
+	 * @param string $title
 	 * @return string
 	 */
-	public function editModalTitle($a_current_title)
+	public function editModalTitle($title)
 	{
-		return "[PLUGIN]reverses the title: ".strrev($a_current_title);
+		return "[PLUGIN]reverses the title: ".strrev($title);
 	}
 }
