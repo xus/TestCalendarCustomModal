@@ -1,12 +1,12 @@
-# CustomModal
+# TestCalendarCustomModal
 
-CustomModal is a plugin to test the "AppointmentCustomModal" plugin slot. It is only for test purposes.
+TestCalendarCustomModal is a plugin to test the "AppointmentCustomModal" plugin slot. It is only for test purposes.
 
 **Minimum ILIAS Version:**
-5.3
+5.3.0
 
 **Maximum ILIAS Version:**
-5.3
+5.3.999
 
 **Responsible Developer:**
 Jesús López Reyes - lopez@leifos.com
@@ -15,11 +15,10 @@ Jesús López Reyes - lopez@leifos.com
 This plugin does not support any language. All text is hardcoded in the php files. 
 
 ### Quick Installation Guide
-1. Copy the content of this folder in <ILIAS_directory>/Customizing/global/plugins/Services/Calendar/AppointmentCustomModal/CustomModal
+1. Unzip the file and copy the folder in <ILIAS_directory>/Customizing/global/plugins/Services/Calendar/AppointmentCustomModal
 
-    _or git clone this repository inside the directory <ILIAS_directory>/Customizing/global/plugins/Services/Calendar/AppointmentCustomModal/CustomModal
- and rename the TestCalendarCustomModal directory to CustomModal._
- 2. This plugin can be activated as usual.
+    _or git clone this repository inside the directory <ILIAS_directory>/Customizing/global/plugins/Services/Calendar/AppointmentCustomModal/_
+2. This plugin can be activated as usual.
 
 
 ### Expected Result

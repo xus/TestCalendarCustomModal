@@ -10,7 +10,7 @@ include_once("./Services/Calendar/classes/class.ilAppointmentCustomModalPlugin.p
  * @version $Id$
  *
  */
-class ilCustomModalPlugin extends ilAppointmentCustomModalPlugin
+class ilTestCalendarCustomModalPlugin extends ilAppointmentCustomModalPlugin
 {
 	/**
 	 * Get Plugin Name. Must be same as in class name il<Name>Plugin
@@ -20,7 +20,7 @@ class ilCustomModalPlugin extends ilAppointmentCustomModalPlugin
 	 */
 	final function getPluginName()
 	{
-		return "CustomModal";
+		return "TestCalendarCustomModal";
 	}
 
 	/**
